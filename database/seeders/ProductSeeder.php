@@ -2,6 +2,7 @@
 
 namespace Database\Seeders;
 
+use App\Models\Product;
 use Illuminate\Database\Seeder;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Str;
@@ -29,12 +30,7 @@ class ProductSeeder extends Seeder
          * @see https://laravel.com/docs/12.x/seeding
          * @see https://laravel.com/docs/12.x/database-testing#defining-model-factories
          */
+        $products = Product::factory()->count(50)->create();
 
-        DB::table('products')->insert([
-            'name' => Str::random(5000),
-            'description' => str::random(5000),
-            'price' => Str::random(1, 300),
-            'stock' => Str::random(5000),
-        ]);
     }
 }

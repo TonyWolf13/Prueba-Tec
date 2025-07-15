@@ -27,14 +27,11 @@ class ProductFactory extends Factory
          */
 
         return [
-            'product_id' => \App\Models\product::inRandomOrder()->first()->id,
+            // 'product_id' => \App\Models\product::inRandomOrder()->first()->id,
             'name' => $this->faker->word(),
             'description' => $this->faker->sentence(),
             'price' => $this->faker->numberBetween(1, 300),
             'stock' => $this->faker->numberBetween(1, 5000),
-            'create_at' => now(),
-            'update_at' => now(),
-
         ];
     }
 }
